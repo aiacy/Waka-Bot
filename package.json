@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "axios": "^0.26.0",
+    "discord.js": "^13.6.0"
+  },
+  "name": "waka-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aliyah Regina",
+  "license": "ISC",
+  "description": ""
+}
