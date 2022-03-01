@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES"]}); 
 const prefix = "!waka-";
 
+const joinURL = 'https://wakatime.com/leaders/sec/e6fdf763-88e0-4923-9df1-d51c216acc09/join/wamfwwypqg';
+
 client.on('messageCreate', msg => {
 
   async function getLeader() {
@@ -21,7 +23,7 @@ client.on('messageCreate', msg => {
     msg.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
   }
   else if (command === 'join'){
-    msg.reply('Follow this link to join')
+    msg.reply(`So you want to join the AIACY WakaTime Leaderboard? Click to join ${joinURL}`);
   }
 });
 
