@@ -13,7 +13,7 @@ const commands = [
 ]
   .map(command => command.toJSON());
 
-const rest = new REST({ version: '9' }).setToken('OTQ3OTc1MzE4NDA3MzYwNjEz.Yh1E0A.sZDs_SynVSli_I-qOA1UxqWkqAU');
+const rest = new REST({ version: '9' }).setToken(process.env.BOT_TOKEN);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
 	.then(() => console.log('Successfully registered application commands.'))

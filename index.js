@@ -55,3 +55,4 @@ client.on('messageCreate', msg => {
 client.login(process.env['BOT_TOKEN']);
 
 //TODO: create database to store WakaTime user ids to be able to read from them and promote rank 
+
