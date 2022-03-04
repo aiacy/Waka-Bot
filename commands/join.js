@@ -29,8 +29,8 @@ const embed = {
         "value": "Follow the [link](https://wakatime.com/plugins) to WakaTime and integrate it with one of their supported IDE. Also take a look at the possible [integrations](https://wakatime.com/integrations). We like to add GitHub and Google Calendar. Explore the [community](https://wakatime.com/community) to discover what other integrations developers have made with the [WakaTime API](https://wakatime.com/developers) (like this bot)."
       },
       {
-        "name": "😱",
-        "value": "try exceeding some of them!"
+        "name": "Step 2",
+        "value": "Give WakaTime Bot permission to access your account try exceeding some of them!"
       },
       {
         "name": "🙄",
