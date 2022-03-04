@@ -52,7 +52,7 @@ app.get('/', async ({ query }, response) => {
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
 
 
-//TODO: Seperate this out
+//TODO: Seperate this out if i can
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.commands = new Collection();
