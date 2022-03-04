@@ -49,6 +49,10 @@ app.get('/', async ({ query }, response) => {
 	return response.sendFile('index.html', { root: '.' });
 });
 
+app.get('/dashboard', (req, res) => {
+  res.send('Hello World!')
+});
+
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
 
 
