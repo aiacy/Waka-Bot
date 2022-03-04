@@ -50,7 +50,7 @@ app.get('/', async ({ query }, response) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile('dashboard.html', { root: '.'});
 });
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
