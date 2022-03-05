@@ -9,6 +9,7 @@ const { clientId, port } = require('./config.json');
 const clientSecret = process.env.CLIENT_SECRET;
 
 const app = express();
+app.use(express.static(__dirname));
 
 app.get('/', async ({ query }, response) => {
 	const { code } = query;
