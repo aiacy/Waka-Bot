@@ -11,48 +11,21 @@ const clientSecret = process.env.CLIENT_SECRET;
 const app = express();
 app.use(express.static(__dirname));
 
-app.get('/', async ({ query }, response) => {
-	const { code } = query;
+app.get('/', async (request, response) => {
+  return response.sendFile('index.html', {root: '.'});
+});
 
-	if (code) {
-		try {
-			const oauthResult = await fetch('https://discord.com/api/oauth2/token', {
-				method: 'POST',
-				body: new URLSearchParams({
-					client_id: clientId,
-					client_secret: clientSecret,
-					code,
-					grant_type: 'authorization_code',
-					redirect_uri: 'https://waka-bot.aiacy.repl.co',
-					scope: 'identify',
-				}),
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
-				},
-			});
+app.get('/commands', async (request, response) => {
+  return response.sendFile('commands.html', {root: './pages'});
+});
 
-			const oauthData = await oauthResult.json();
-
-			const userResult = await fetch('https://discord.com/api/users/@me', {
-				headers: {
-					authorization: `${oauthData.token_type} ${oauthData.access_token}`,
-				},
-			});
-
-			console.log(await userResult.json());
-		} catch (error) {
-			// NOTE: An unauthorized token will not throw an error;
-			// it will return a 401 Unauthorized response in the try block above
-			console.error(error);
-		}
-	}
-
-	return response.sendFile('index.html', { root: '.' });
+app.get('/stats', async (request, response) => {
+  return response.sendFile('stats.html', {root: './pages'});
 });
 
 
 app.get('/dashboard', async (request, response) => {
-  return response.sendFile('dashboard.html', { root: '.'});
+  return response.sendFile('dashboard.html', { root: './pages'});
 });
      
 app.get('/login', async ({ query }, response) => {
